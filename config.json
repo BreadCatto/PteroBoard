@@ -1,0 +1,7 @@
+{
+    "version": "0.1-beta",
+    "host": "127.0.0.1",
+    "port": 5000,
+    "title": "PteroClient",
+    "mongodb_url": "mongodb+srv://bread:breadkitten@devlopment.oyjvkzu.mongodb.net/?retryWrites=true&w=majority"
+}

@@ -1,2 +1,3 @@
 #Ignore the venv so the dashboard would not be too large.
 venv/
+__pycache__/
