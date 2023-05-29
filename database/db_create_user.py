@@ -18,6 +18,15 @@ def create(email, password, username, pteroid):
         "pterodactyl_id": pteroid,
         "package": "default"
     }
+    resources_json = {
+        "cpu": 0,
+        "ram": 0,
+        "disk": 0,
+        "servers": 0,
+        "backups": 0,
+        "databases": 0,
+        "ports": 0
+    }
 
     user_inserted = records.insert_one(records_json)
-    resources_inserted = resources.insert_one
+    resources_inserted = resources.insert_one(resources_json)
