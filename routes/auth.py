@@ -68,7 +68,7 @@ def register():
             if ptero_id == "error":
                 message = "an error occured"
                 print(message)
-                return render_template('register.html')
+                return render_template('register.html', message=message)
             else:
                 db_create_user.create(email=email, password=hashed, username=user, pteroid=ptero_id)
                 user_data = records.find_one({"email": email})
