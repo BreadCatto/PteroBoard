@@ -10,5 +10,8 @@ db = client.get_database('pteroclient')
 records = db.users
 resources = db.resources
 
-def find(username):
-    user_inserted = resources.find_one({"username": "username"})
+def find(email):
+    get_username = records.find_one({"email": email})
+    username = get_username['username']
+    info = resources.find_one({"username": username})
+    return info
