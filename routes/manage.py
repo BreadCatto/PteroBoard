@@ -6,6 +6,7 @@ from app import create_user
 manage_routes = Blueprint('manage', __name__)
 @manage_routes.route('/my')
 
+
 def my():
     if "email" in session:
         email = session["email"]
