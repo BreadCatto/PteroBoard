@@ -19,6 +19,7 @@ def create(email, password, username, pteroid):
         "package": "default"
     }
     resources_json = {
+        "username": username,
         "cpu": 0,
         "ram": 0,
         "disk": 0,
