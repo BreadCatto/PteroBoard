@@ -33,8 +33,9 @@ def my():
         backups = pkg_backups + add_backups
         databases = pkg_databases + add_databases
         ports = pkg_ports + add_ports
+        coins = resources["coins"]
         return render_template('my.html', email=email, cpu=cpu, ram=ram, 
                                disk=disk, servers=servers, backups=backups, 
-                               databases=databases, ports=ports)
+                               databases=databases, ports=ports, coins=coins)
     else:
         return redirect(url_for("auth.login")) 

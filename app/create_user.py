@@ -3,6 +3,7 @@ import json
 
 with open("config.json") as jsonfile:
     data = json.load(jsonfile)
+
 domain = data['pterodactyl']['domain']
 api = data['pterodactyl']['api_key']
 url = f'{domain}/api/application/users'
@@ -52,4 +53,6 @@ def create(email, username, password):
         ptero_id = res["attributes"]["id"]
         return ptero_id
     else:
-        print(response)
+        print(response.text) 
+        return "error"
+

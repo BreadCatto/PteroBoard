@@ -65,10 +65,15 @@ def register():
         else:
             hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
             ptero_id = create_user.create(email=email, username=user, password=password)
-            db_create_user.create(email=email, password=hashed, username=user, pteroid=ptero_id)
-            user_data = records.find_one({"email": email})
-            new_email = user_data['email']
-            return redirect(url_for("manage.my"))
+            if ptero_id == "error":
+                message = "an error occured"
+                print(message)
+                return render_template('register.html')
+            else:
+                db_create_user.create(email=email, password=hashed, username=user, pteroid=ptero_id)
+                user_data = records.find_one({"email": email})
+                new_email = user_data['email']
+                return redirect(url_for("manage.my"))
     return render_template('register.html')
   
 

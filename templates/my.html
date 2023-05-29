@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
 
 {% block content %}
     <p>This is the dashboard page content.</p>
@@ -9,4 +11,5 @@
     <p>BACKUPS: {{ backups }}</p>
     <p>DATABASES: {{ databases }}</p>
     <p>PORTS: {{ ports }}</p>
+    <p>COINS: {{ coins }}</p>
 {% endblock %}

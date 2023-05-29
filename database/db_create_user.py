@@ -10,16 +10,19 @@ db = client.get_database('pteroclient')
 records = db.users
 resources = db.resources
 
+default_pkg = conf["packages"]["default_pkg"]
+
 def create(email, password, username, pteroid):
     records_json = {
         "username": username,
         "email": email,
         "password": password,
         "pterodactyl_id": pteroid,
-        "package": "default"
+        "package": default_pkg
     }
     resources_json = {
         "username": username,
+        "coins": 0,
         "cpu": 0,
         "ram": 0,
         "disk": 0,

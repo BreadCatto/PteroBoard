@@ -9,10 +9,11 @@
     },
     "pterodactyl": {
         "domain": "https://breadcloud-xeooz.run-ap-south1.goorm.site",
-        "api_key": ""
+        "api_key": "ptla_6gv16cukXetPHlOlX720hFoeVIOve5CzoiWfaRQaTYT"
     },
     "packages": {
         "_comment": "don't delete the default package",
+        "default_pkg": "default",
         "default": {
             "cpu": 100,
             "ram": 2048,
