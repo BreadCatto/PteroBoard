@@ -1,14 +1,17 @@
-{% extends "base.html" %}
+{% extends "auth_base.html" %}
 {% block title %}Register{% endblock %}
 
 {% block content %}
 
 {% if message  %}
-    <div class="alert alert-secondary" role="alert">
-        <p>{{ message }}</p>
-    </div>
+  <center><div class="message-box" style="margin: 0px;">
+    <div class="message-content">
+      <p>{{ message }}</p></div>
+  </div></center>
 {% endif %}
-
+<section class="create-server">
+  <h2>Register</h2>
+  <br>
 <form action="" method="post">
     <div class="form-group">
         <label for="Fullname">Username</label>
@@ -32,3 +35,4 @@
 
 
 {% endblock %}
+

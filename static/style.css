@@ -1,0 +1,377 @@
+*{
+	padding: 0;
+	margin: 0;
+  	-ms-overflow-style: none;  /* IE and Edge */
+  	scrollbar-width: none;  /* Firefox */
+	box-sizing: border-box;
+	font-family: 'Quicksand', sans-serif;
+	scroll-behavior: smooth;
+	list-style: none;
+	text-decoration: none;
+}
+
+:root {
+	--main-color: #0e7eda;
+	--text-color: #cccccc;
+	--bg-color: #111319;
+	--sec-color: #191c24;
+	--big-font: 2rem;
+	--h2-font: 1rem;
+	--p-font: 0.9rem;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.btn{
+	margin: 10px;
+	display: inline-block;
+	padding: 11px 30px;
+	background: #2970cc;
+	color: #fff;
+	border-radius: 0.5rem;
+}
+
+.login-img{
+    height: 200px;
+}
+
+body{
+	color: var(--text-color);
+	background-color: var(--bg-color);
+}
+
+
+.navbar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	padding: 10px 20px;
+  }
+  
+  .logo {
+	color: var(--main-color);
+	margin: 20px;
+	font-size: 25px;
+	font-weight: bold;
+	text-decoration: none;
+  }
+  
+  .nav-links {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  .nav-links li {
+	margin: 0 10px;
+  }
+  
+  .nav-links li a {
+	color: var(--text-color);
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 15px;
+  }
+  .navbar a:hover{
+	color: var(--main-color);
+	transition: 0.4s;
+  }
+  .navbar a.active{
+	color: var(--main-color);
+  }
+  
+  
+
+
+  .flexboxes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin: 25px auto;
+	max-width: 800px;
+  }
+  
+  .box {
+	flex: 1;
+	background-color: var(--sec-color);
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+	padding: 5px 50px;
+	margin: 2px;
+	text-align: center;
+  }
+  
+  .box h3 {
+	color: var(--main-color);
+	font-size: 30px;
+	margin-top: 0;
+  }
+  
+  .box p {
+	color: var(--text-color);
+	font-size: 20px;
+	font-weight: 1000;
+	margin-bottom: 0;
+  }
+
+  .box .icon{
+		color: #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: flex-end;
+
+  }
+  
+
+  .server-list {
+	background-color: var(--sec-color);
+	margin: 50px auto;
+	max-width: 800px;
+  }
+  
+  table {
+	width: 100%;
+	border-collapse: collapse;
+  }
+  
+  th{
+	font-size: large;
+	font-weight: bold;
+	padding: 25px;
+	text-align: left;
+  }
+  td {
+	font-size: medium;
+	padding: 25px;
+	text-align: left;
+  }
+  
+  th:first-child,
+  td:first-child {
+	width: 30%;
+  }
+  
+  th:last-child,
+  td:last-child {
+	text-align: center;
+  }
+  
+  .edit-btn,
+  .delete-btn,
+  .view-btn {
+	display: inline-block;
+	margin-right: 0.1px;
+	padding: 8px 15px;
+	border: none;
+	background-color: #4CAF50;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-size: 15px;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 5px;
+  }
+  
+  .delete-btn {
+	background-color: #f44336;
+  }
+  
+  .view-btn {
+	background-color: #2196F3;
+  }
+  
+  .edit-btn:hover,
+  .delete-btn:hover,
+  .view-btn:hover {
+	transition: 0.4s;
+	opacity: 0.8;
+  }
+
+  .dropdown {
+	margin-right: 20px;
+	position: relative;
+	display: inline-block;
+  }
+  
+  .dropbtn {
+	border-radius: 50%;
+	height: 50px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+  }
+  
+  .dropdown-content {
+	border-radius: 5px;
+	display: none;
+	position: absolute;
+	z-index: 1;
+	background-color: var(--sec-color);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	min-width: 120px;
+	right: 0;
+  }
+  
+  .dropdown-content a {
+	font-weight: bold;
+	transition: 0.4s;
+	padding: 10px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+	transition: 0.4s;
+	background-color: var(--bg-color);
+  }
+  
+  .dropdown:hover .dropdown-content {
+	display: block;
+  }
+  
+  .menu-icon {
+	display: none;
+	font-size: 24px;
+	cursor: pointer;
+  }
+  
+  .create-server {
+	padding: 20px;
+	background-color: var(--sec-color);
+	margin: 50px auto;
+	max-width: 800px;
+  }
+  
+  .create-server-box {
+	font-size: medium;
+	background-color: var(--bg-color);
+	border: 1px solid var(--main-color);
+	border-radius: 5px;
+	padding: 20px;
+  }
+  
+  .create-server h2 {
+	margin: 10px;
+	font-size: 18px;
+  }
+
+  .create-server .form-group {
+	
+	flex: 1;
+	margin-right: 20px;
+	margin-bottom: 20px;
+  }
+  
+  .create-server label {
+	
+	display: block;
+	font-size: medium;
+	margin-bottom: 5px;
+  }
+  
+  .create-server input,
+  .create-server select {
+	
+	border: 1px solid var(--main-color);
+	background-color: var(--bg-color);
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+    color: #cccccc;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	margin-top: 5px;
+  }
+  
+  .create-server button {
+	background-color: var(--main-color);
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 16px;
+	cursor: pointer;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+  }
+  
+  .user-info-2 {
+	border-radius: 5px;
+	padding: 20px;
+	background-color: var(--sec-color);
+	margin: 50px auto;
+	max-width: 800px;
+  }
+
+  .user-info-2 h2{
+	color: var(--main-color);
+  }
+
+  .user-info-2 a{
+	color: var(--main-color);
+  }
+
+  .user-info-2 button{
+	background-color: var(--sec-color);
+	color: var(--main-color);
+	font-size: 16px;
+	cursor: pointer;
+	border: none;
+  }
+
+  .message-box {
+	border-radius: 5px;
+	padding: 20px;
+	background-color: var(--main-color);
+	margin: 50px auto;
+	max-width: 800px;
+  }
+  
+  .message-content h3 {
+	font-size: 20px;
+	margin-bottom: 10px;
+  }
+  
+  .message-content p {
+	color: #fff;
+	font-size: 16px;
+	margin-bottom: 0;
+  }
+  
+
+@media screen and (max-width: 768px) {
+  	.server-list{
+		padding: 0;
+		max-width: 100;
+	}
+}
+
+footer {
+	padding: 10px;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+  }
+  
+  footer p {
+	margin: 0;
+	font-size: 14px;
+	color: #444;
+  }

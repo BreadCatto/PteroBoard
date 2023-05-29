@@ -8,7 +8,7 @@ with open("config.json") as jsonfile:
     conf = json.load(jsonfile)
 
 @manage_routes.route('/my')
-def my():
+async def my():
     if "email" in session:
         email = session["email"]
         resources = db_get_resources.find(email=email)
@@ -34,7 +34,8 @@ def my():
         databases = pkg_databases + add_databases
         ports = pkg_ports + add_ports
         coins = resources["coins"]
-        return render_template('my.html', email=email, cpu=cpu, ram=ram, 
+        username = resources["username"]
+        return render_template('my.html', username=username, cpu=cpu, ram=ram, 
                                disk=disk, servers=servers, backups=backups, 
                                databases=databases, ports=ports, coins=coins)
     else:

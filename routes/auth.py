@@ -13,7 +13,7 @@ records = db.users
 
 
 @auth_routes.route("/", methods=["POST", "GET"])
-def login():
+async def login():
     message = 'Please login to your account'
     if "email" in session:
         return redirect(url_for("manage.my"))
@@ -38,8 +38,8 @@ def login():
     return render_template('login.html', message=message)
 
 @auth_routes.route("/register", methods=['POST', 'GET'])
-def register():
-    message = ''
+async def register():
+    message = 'Please Register your account.'
     if "email" in session:
         return redirect(url_for("manage.my"))
     if request.method == "POST":
@@ -74,11 +74,11 @@ def register():
                 user_data = records.find_one({"email": email})
                 new_email = user_data['email']
                 return redirect(url_for("manage.my"))
-    return render_template('register.html')
+    return render_template('register.html', message=message)
   
 
 @auth_routes.route("/logout", methods=["POST", "GET"])
-def logout():
+async def logout():
     if "email" in session:
         session.pop("email", None)
         return redirect(url_for("auth.login"))

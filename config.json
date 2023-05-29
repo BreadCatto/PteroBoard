@@ -5,7 +5,7 @@
         "port": 5000,
         "title": "PteroClient",
         "mongodb_url": "mongodb+srv://bread:breadkitten@devlopment.oyjvkzu.mongodb.net/?retryWrites=true&w=majority",
-        "dash_secret": "sdgsgsvsdvsdfsdsgfbsdfgdghfghsfgdsf"
+        "secret": "sdgsgsvsdvsdfsdsgfbsdfgdghfghsfgdsf"
     },
     "pterodactyl": {
         "domain": "https://breadcloud-xeooz.run-ap-south1.goorm.site",

@@ -3,13 +3,42 @@
 
 
 {% block content %}
-    <p>This is the dashboard page content.</p>
-    <p>CPU: {{ cpu }}</p>
-    <p>RAM: {{ ram }}</p>
-    <p>DISK: {{ disk }}</p>
-    <p>SERVERS: {{ servers }}</p>
-    <p>BACKUPS: {{ backups }}</p>
-    <p>DATABASES: {{ databases }}</p>
-    <p>PORTS: {{ ports }}</p>
-    <p>COINS: {{ coins }}</p>
+<section class="flexboxes">
+    <div class="box">
+        <i class='bx bx-chip icon' style="font-size: 2em;left:0;"></i>
+      <h3>CPU</h3>
+      <p>{{ cpu }}%</p>
+      
+    </div>
+    <div class="box">
+        <i class='bx bxs-microchip icon' style="font-size: 2em;left:0;"></i>
+      <h3>RAM</h3>
+      <p>{{ ram }} MB</p>
+    </div>
+    <div class="box">
+        <i class='bx bxs-hdd icon' style="font-size: 2em;left:0;"></i>
+      <h3>DISK</h3>
+      <p>{{ disk }} MB</p>
+    </div>
+    <div class="box">
+        <i class='bx bxs-server icon' style="font-size: 2em;left:0;"></i>
+      <h3>SERVERS</h3>
+      <p>{{ servers }}</p>
+    </div>
+    <div class="box">
+        <i class='bx bxs-server icon' style="font-size: 2em;left:0;"></i>
+      <h3>BACKUPS</h3>
+      <p>{{ backups }}</p>
+    </div>
+    <div class="box">
+        <i class='bx bxs-server icon' style="font-size: 2em;left:0;"></i>
+      <h3>DATABASES</h3>
+      <p>{{ databases }}</p>
+    </div>
+    <div class="box">
+        <i class='bx bxs-server icon' style="font-size: 2em;left:0;"></i>
+      <h3>PORTS</h3>
+      <p>{{ ports }}</p>
+    </div>
+</section>
 {% endblock %}

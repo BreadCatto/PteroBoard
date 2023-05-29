@@ -1,24 +1,30 @@
-{% extends "base.html" %}
+{% extends "auth_base.html" %}
 {% block title %}Login{% endblock %}
 
 {% block content %}
 
 {% if message  %}
-    <div class="alert alert-secondary" role="alert">
-        <p>{{ message }}</p>
-    </div>
+  <center><div class="message-box" style="margin: 0px;">
+    <div class="message-content">
+      <p>{{ message }}</p></div>
+  </div></center>
 {% endif %}
-
-<form action="" method="post">
-  <div class="form-group">
-      <label for="InputEmail">Email address</label>
-      <input name="email" class="form-control" id="InputEmail"  placeholder="Enter email">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
+<section class="create-server">
+  <h2>Login</h2>
+  <br>
+  <form action="" method="post">
     <div class="form-group">
-      <label for="InputPassword">Password</label>
-      <input type="password" name="password" class="form-control" id="InputPassword" placeholder="Password">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+        <label for="InputEmail">Email address</label>
+        <input name="email" class="form-control" id="InputEmail"  placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+      <div class="form-group">
+        <label for="InputPassword">Password</label>
+        <input type="password" name="password" class="form-control" id="InputPassword" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</section>
+
 {% endblock %}
