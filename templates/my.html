@@ -3,6 +3,13 @@
 
 
 {% block content %}
+
+{% if message  %}
+  <center><div class="message-box" style="margin: 0px;">
+    <div class="message-content">
+      <p>{{ message }}</p></div>
+  </div></center>
+{% endif %}
 <section class="flexboxes">
     <div class="box">
         <i class='bx bx-chip icon' style="font-size: 2em;left:0;"></i>

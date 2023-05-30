@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Account{% endblock %}
+
+{% block content %}
+
+<section class="user-info-2">
+    <h2>User Information</h2>
+    <br>
+    {% if verified == False %}
+    <p>Email: {{ email }} <a href="/account/verify">Verify</a></p>
+    {% else %}
+    <p>Email: {{ email }} <a  style="color: green;">Verified</a></p>
+    {% endif %}
+    <p>Username: {{ username }}</p>
+    <p>Password:  <button onclick="regen()">Regenerate Password</button></p>
+  </section>
+
+{% endblock %}

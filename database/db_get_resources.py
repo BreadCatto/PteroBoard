@@ -15,3 +15,12 @@ def find(email):
     username = get_username['username']
     info = resources.find_one({"username": username})
     return info
+
+def check_verified(email):
+    get_verified = records.find_one({"email": email})
+    verified = get_verified["verified"]
+    return verified
+
+def get_info(email):
+    get = records.find_one({"email": email})
+    return get

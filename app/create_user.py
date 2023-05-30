@@ -13,7 +13,7 @@ headers = {
         "Content-Type": "application/json",
         }
 
-def email_check(email):
+async def email_check(email):
     params = {
         "filter[email]": email
     }
@@ -25,7 +25,7 @@ def email_check(email):
 
     return "noexist"
 
-def username_check(username):
+async def username_check(username):
     params = {
         "filter[username]": username
     }
@@ -38,7 +38,7 @@ def username_check(username):
     return "noexist"
 
 
-def create(email, username, password):
+async def create(email, username, password):
     payload = '''{
         "email": "%s",
         "username": "%s",

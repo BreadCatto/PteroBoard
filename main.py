@@ -16,4 +16,4 @@ for file in os.listdir('routes'):
         app.register_blueprint(blueprint)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host=conf["app"]["host"], port=conf["app"]["port"])

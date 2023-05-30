@@ -12,13 +12,14 @@ resources = db.resources
 
 default_pkg = conf["packages"]["default_pkg"]
 
-def create(email, password, username, pteroid):
+async def create(email, password, username, pteroid):
     records_json = {
         "username": username,
         "email": email,
         "password": password,
         "pterodactyl_id": pteroid,
-        "package": default_pkg
+        "package": default_pkg,
+        "verified": False
     }
     resources_json = {
         "username": username,
@@ -32,5 +33,5 @@ def create(email, password, username, pteroid):
         "ports": 0
     }
 
-    user_inserted = records.insert_one(records_json)
-    resources_inserted = resources.insert_one(resources_json)
+    user_inserted = await records.insert_one(records_json)
+    resources_inserted = await resources.insert_one(resources_json)
