@@ -1,6 +1,8 @@
 import pymongo
 import bcrypt
 import json
+import string
+import random
 
 with open("config.json") as jsonfile:
     conf = json.load(jsonfile)
@@ -13,13 +15,19 @@ resources = db.resources
 default_pkg = conf["packages"]["default_pkg"]
 
 async def create(email, password, username, pteroid):
+    N = 25
+    res = ''.join(random.choices(string.ascii_lowercase +
+                             string.digits, k=N))
+    token = str(res)
+    print(token)
     records_json = {
         "username": username,
         "email": email,
         "password": password,
         "pterodactyl_id": pteroid,
         "package": default_pkg,
-        "verified": False
+        "verified": False,
+        "token": token
     }
     resources_json = {
         "username": username,
