@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, url_for, redirect, session
 import pymongo, json, bcrypt
 from app import get_user
-from database import db_get_resources
+from database import db_get_user
 
 manage_routes = Blueprint('manage', __name__)
 
@@ -12,7 +12,7 @@ with open("config.json") as jsonfile:
 async def my():
     if "email" in session:
         email = session["email"]
-        resources = db_get_resources.find(email=email)
+        resources = db_get_user.find(email=email)
         pkg_cpu = conf["packages"]["default"]["cpu"]
         pkg_ram = conf["packages"]["default"]["ram"]
         pkg_disk = conf["packages"]["default"]["disk"]
@@ -36,10 +36,11 @@ async def my():
         ports = pkg_ports + add_ports
         coins = resources["coins"]
         username = resources["username"]
-        verified = db_get_resources.check_verified(email=email)
+        verified = db_get_user.check_verified(email=email)
 
         if verified == False:
-            message = f"You need To verify your email through "
+            verify_url = url_for("manage.account_verify")
+            message = f'You need To verify your email through <a href="{verify_url}"> Verify</a>'
             return render_template('my.html', username=username, cpu=cpu, ram=ram, 
                                disk=disk, servers=servers, backups=backups, 
                                databases=databases, ports=ports, coins=coins, message=message)
@@ -56,9 +57,15 @@ async def account():
     if "email" in session:
         email = session["email"]
         user_info = get_user.find(email=email)
-        status = db_get_resources.get_info(email=email)
+        status = db_get_user.get_info(email=email)
         verified = status["verified"]
         return render_template('account.html', 
                                email=user_info["attributes"]["email"],
                                username = user_info["attributes"]["username"],
                                verified=verified)
+    
+@manage_routes.route("/account/verify", methods=["POST", "GET"])
+async def account_verify():
+    if "email" in session:
+        email = session["email"]
+        

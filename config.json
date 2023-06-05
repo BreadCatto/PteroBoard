@@ -1,7 +1,7 @@
 {
     "app": {
         "version": "0.1-beta",
-        "host": "2409:4064:2188:dda7:5860:893a:ab3a:12da",
+        "host": "127.0.0.1",
         "port": 80,
         "title": "PteroClient",
         "mongodb_url": "mongodb+srv://bread:breadkitten@devlopment.oyjvkzu.mongodb.net/?retryWrites=true&w=majority",
@@ -10,6 +10,9 @@
     "pterodactyl": {
         "domain": "https://breadcloud-xeooz.run-ap-south1.goorm.site",
         "api_key": "ptla_6gv16cukXetPHlOlX720hFoeVIOve5CzoiWfaRQaTYT"
+    },
+    "email": {
+        
     },
     "packages": {
         "_comment": "don't delete the default package",

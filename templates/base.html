@@ -17,7 +17,7 @@
     <img class="logo" style="height: 75px;" src="/assets/img/logo.png" alt="">
     <a class="logo" href="#">PteroClient</a>
     <ul class="nav-links">
-      <li><a class="active" href="#">Dashboard</a></li>
+      <li><a class="active" href="/">Dashboard</a></li>
       <li><a href="#">Create Server</a></li>
       <li><a href="#">Your Servers</a></li>
       <li><a href="#">Store</a></li>
@@ -26,11 +26,11 @@
     </ul>
     <div class="user-info">
       <div class="dropdown">
-      <h3 style="color: #0e7eda;">{{ username }}</h3>
+      <img class="dropbtn" src="https://cdn.discordapp.com/attachments/863284730903527476/1113749751154888704/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.png" alt="">
 
         <div class="dropdown-content">
             <a class="active" href="#">0 Coins</a>
-
+            <a class="" href="/account">Account</a>
           <a style="color:red" href="/logout">Logout</a>
         </div>
       </div>
@@ -41,7 +41,15 @@
       <div class="line"></div>
     </div>
 </div>
+
+{% if message  %}
+  <center><div class="message-box" style="margin: 0px;">
+    <div class="message-content">
+      <p>{{ message }}</p></div>
+  </div></center>
+  {% endif %}
 {% block content %}{% endblock %}
-<center><footer>© | <%= extra.home.title %> 2021-23</footer></center>
+
+<center><footer>© | PteroClient 2021-23</footer></center>
 </body>
 </html>

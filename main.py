@@ -6,7 +6,7 @@ with open("config.json") as jsonfile:
     conf = json.load(jsonfile)
 
 app = Flask(__name__)
-app.secret_key = "dsvcbdbxbbxccvxvxcvxcvxcvxcv"
+app.secret_key = "bread"
 
 for file in os.listdir('routes'):
     if file.endswith('.py') and file != '__init__.py':
